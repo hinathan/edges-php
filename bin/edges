@@ -1,0 +1,19 @@
+#!/usr/bin/php
+<?php
+
+error_reporting(E_ALL);
+$lib = realpath(dirname(__DIR__) . '/lib/');
+require($lib . '/SplClassLoader.php');
+$classLoader = new SplClassLoader('Event', $lib);
+$classLoader->register();
+
+$timer = new Event\Timer();
+
+function setTimeout($callback, $interval) {
+    global $timer;
+    $timer->setTimeout($callback, $interval);
+}
+
+require $argv[1];
+
+Event\Runloop::run();
