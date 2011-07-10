@@ -1,0 +1,124 @@
+body {
+   background-image: -moz-radial-gradient(
+         50% 50% 90deg,
+         rgba(245,245,245,1.0) 0%, 
+         rgba(100,100,100,1.0) 100%
+      );
+   background-image: -webkit-gradient(
+      radial, 
+      50% 50%, 0, 
+      50% 50%, 1000, 
+      from(rgba(245,245,245,1.0)), 
+      to(rgba(100,100,100,1.0))
+   );
+
+   margin: 0;
+   padding: 2.5em 0;
+   font-family: sans-serif;
+}
+
+.wrap {
+   width: 1180px;
+   margin: auto;
+   overflow: hidden;
+}
+
+#slides {
+   width: 9999999px;
+}
+
+/* Each slide */
+#slides > div {
+   float: left;
+   width: 1180px;
+   height: 600px;
+   margin-right: 200px;
+   text-align: center;
+
+   display: -webkit-box;
+   -webkit-box-align: center;
+   -webkit-box-orient: horizontal;
+   -webkit-box-pack: center;
+
+   display: box;
+   box-align: center;
+   box-orient: horizontal;
+   box-pack: center;
+
+   -webkit-transition: all 1s;
+}
+
+/* Slide Styling */
+h1,
+h2,
+h3,
+h4 {
+   color: #292929;
+   font-family: 'League Gothic', sans-serif;
+   letter-spacing: -5px;
+   margin-top: 0;
+
+}
+
+#slides > div h2 {
+   font-size: 180px;
+   line-height: 1em;
+   margin: 0;
+   text-shadow: 5px 3px 0 white;
+}
+
+h2 span {
+   color: blue;
+   font-size: .3em;
+   display: block;
+   letter-spacing: -2px;
+   font-style: italic;
+   line-height: 1em;
+   margin-bottom: 10px;
+}
+
+h2 span::after {
+   content : '...';
+}
+
+h3 {
+   border-bottom: 1px solid #666;
+   font-size: 115px;
+   margin-bottom: .4em;
+}
+
+h4 {
+   border-bottom: 1px solid #666;
+   font-size: 50px;
+   letter-spacing: -1px;
+   margin-bottom: 20px;
+   margin-top: .5em;
+   padding-bottom: .2em;
+   text-shadow: none; 
+}
+
+li {
+   list-style: none;
+}
+
+/* GRID */
+
+.grid {
+   background: rgba(0,0,0,.2);
+   border: 1px solid white;
+   outline: 1px solid #666;
+   display: -webkit-box;
+   font-size: 13px;
+}
+
+.grid > div {
+   padding: .4em 2em;
+}
+
+#slides ul {
+   text-align: left;
+   font-size: 2em;
+   margin-top: 0;
+   padding-left: 0;
+   line-height: 1.5em;
+}

@@ -1,0 +1,12 @@
+<div>
+   <h3>HTTP + Timers</h3>
+<span>
+   Wraps pecl's <a href="http://pecl.php.net/package/libevent">libevent.so</a> with API-equivalent<br/>HTTP ServerRequest and ServerResponse objects that<br/> work just like in Node.js
+</span>
+<pre style="text-align:left">
+<code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$http&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Event</span><span style="color: #007700">\</span><span style="color: #0000BB">HTTP</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">$srv&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$http</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">createServer</span><span style="color: #007700">(function(</span><span style="color: #0000BB">$req</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$res</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$res</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">write</span><span style="color: #007700">(</span><span style="color: #DD0000">"Hello&nbsp;World&nbsp;immediately\n"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">setTimeout</span><span style="color: #007700">(function()&nbsp;use&nbsp;(&amp;</span><span style="color: #0000BB">$res</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$res</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">end</span><span style="color: #007700">(</span><span style="color: #DD0000">"Goodbye&nbsp;world&nbsp;5&nbsp;seconds&nbsp;later\n"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;</span><span style="color: #0000BB">5000</span><span style="color: #007700">);<br />});<br /><br /></span><span style="color: #0000BB">$srv</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">listen</span><span style="color: #007700">(</span><span style="color: #0000BB">8080</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'127.0.0.1'</span><span style="color: #007700">);<br /></span>
+</span>
+</code>
+</pre>
+</div>
